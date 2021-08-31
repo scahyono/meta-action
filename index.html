@@ -1,1 +1,21 @@
-hello world
+<html>
+<head>
+<script>
+function updateAdvice() {
+	var minute = new Date().getMinutes();
+	var adviceText = "<Action time!";
+	document.body.style.background = 'SkyBlue';
+	if (minute>=50 || minute <10) adviceText = "Meta time!";
+	document.body.style.background = 'MediumSeaGreen';
+	document.getElementById('advice').innerHTML = adviceText;
+}
+window.onload = updateAdvice;
+setInterval(updateAdvice, 3000);
+</script>
+</head>
+<body>
+<div id="advice">
+	Hello world
+</div>
+</body>
+</html>
