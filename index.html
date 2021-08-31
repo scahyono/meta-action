@@ -1,19 +1,36 @@
 <html>
 <head>
 <script>
+const timelyAdvices={
+	5:'have a clear mind and fit body', 
+	9:'get things done',
+	13:'grow your wealth',
+	17:'cultivate a loving family',
+	21:'have a sweet dream'
+};
 function updateAdvice() {
-	var minute = new Date().getMinutes();
+	var now = new Date();
+	var minute = now.getMinutes();
+	var hour = now.getHours();
 	var normalizedMinute = (minute + 10) % 60;
 	var timeLeft = 60-normalizedMinute;
 	var adviceText = "";
+	var nowAdvice="";
+	for (let i = 21; i >= 5; i--) {
+		if (!timelyAdvices[i]) continue;
+		if (hour>=i) {
+			nowAdvice=timelyAdvices[i];
+			break;
+		}
+	}
 	if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
 		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minutes for 🏃🏻, 📆, 💬, 📚 or 🎮" ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️ for the next " + timeLeft + "+ minutes" ;
-	}	
+		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minutes" ;
+	}
 	document.getElementById('advice').innerHTML = adviceText;
 }
 window.onload = updateAdvice;
