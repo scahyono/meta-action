@@ -3,7 +3,7 @@
 <script>
 function updateAdvice() {
 	var minute = new Date().getMinutes();
-	var normalizedMinute = minute + 10;
+	var normalizedMinute = (minute + 10) % 60;
 	var timeLeft = 60-normalizedMinute;
 	var adviceText = "";
 	if (normalizedMinute<20) { 
