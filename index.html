@@ -9,10 +9,10 @@ function updateAdvice() {
 	if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
-		adviceText = "<b>Meta time!</b><br>You have " + timeLeft + " minutes for a quick errands, planning, communication, learning or entertainment" ;
+		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minutes for a quick errands, planning, communication, learning or entertainment" ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Meta time!</b><br>Do something great for the next " + timeLeft + " minutes" ;
+		adviceText = "<b>Meta time!</b><br>Do something great for the next " + timeLeft + "+ minutes" ;
 	}	
 	document.getElementById('advice').innerHTML = adviceText;
 }
