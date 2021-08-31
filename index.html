@@ -3,10 +3,17 @@
 <script>
 function updateAdvice() {
 	var minute = new Date().getMinutes();
-	var adviceText = "<Action time!";
-	document.body.style.background = 'SkyBlue';
-	if (minute>=50 || minute <10) adviceText = "Meta time!";
-	document.body.style.background = 'MediumSeaGreen';
+	var normalizedMinute = minute + 10;
+	var timeLeft = 60-minute;
+	var adviceText = "";
+	if (minute<20) { 
+		document.body.style.background = 'MediumSeaGreen';
+		timeLeft = 20-minute;
+		adviceText = "<b>Meta time!</b><br>You have " + timeLeft + " minutes for a quick errands, planning, communication, learning or entertainment" ;
+	} else {
+		document.body.style.background = 'SkyBlue';
+		adviceText = "<b>Meta time!</b><br>Do something great for the next " + timeLeft + " minutes" ;
+	}	
 	document.getElementById('advice').innerHTML = adviceText;
 }
 window.onload = updateAdvice;
