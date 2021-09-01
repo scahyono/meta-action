@@ -23,7 +23,11 @@ function updateAdvice() {
 			break;
 		}
 	}
-	if (normalizedMinute<20) { 
+        if (hour>=21 || hour<5) {
+		document.body.style.background = 'Red';
+		timeLeft = 8 - (hour + 3) % 24;
+		adviceText = "<b>Bed time!</b><br>Have a sweet dream for the next " + timeLeft + "+ hour" ;
+	} else if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
 		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minutes for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮" ;
