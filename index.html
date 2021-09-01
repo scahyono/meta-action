@@ -24,16 +24,16 @@ function updateAdvice() {
 		}
 	}
         if (hour>=21 || hour<5) {
-		document.body.style.background = 'Red';
+		document.body.style.background = 'Gray';
 		timeLeft = 8 - (hour + 3) % 24;
-		adviceText = "<b>Bed time!</b><br>Have a sweet dream for the next " + timeLeft + "+ hour" ;
+		adviceText = "<b>Bed time!</b><br>Have a sweet dream for the next " + timeLeft + " hour(s)" ;
 	} else if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
-		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minutes for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮" ;
+		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮" ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minutes" ;
+		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s)" ;
 	}
 	document.getElementById('advice').innerHTML = adviceText;
 }
