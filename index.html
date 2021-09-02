@@ -14,7 +14,7 @@ function updateAdvice() {
 	var hour = now.getHours();
 	var normalizedMinute = (minute + 10) % 60;
 	var timeLeft = 60-normalizedMinute;
-	var infoIcon = '<a href="https://github.com/scahyono/meta-action/#readme" target="_blank">ℹ️</a>';
+	var infoIcon = "<a href='https://github.com/scahyono/meta-action/#readme' target='_blank'>ℹ️</a>";
 	var adviceText = "";
 	var nowAdvice="";
 	for (let i = 21; i >= 5; i--) {
@@ -27,14 +27,14 @@ function updateAdvice() {
         if (hour>=21 || hour<5) {
 		document.body.style.background = 'DimGray';
 		timeLeft = 8 - (hour + 3) % 24;
-		adviceText = "<b>Bed time! ' + infoIcon + '</b><br>Have a sweet dream 😴 for the next " + timeLeft + " hour(s)" ;
+		adviceText = "<b>Bed time! " + infoIcon + "</b><br>Have a sweet dream 😴 for the next " + timeLeft + " hour(s)" ;
 	} else if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
-		adviceText = "<b>Meta time! ' + infoIcon + '</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. Need more time? Then schedule it as a protected time." ;
+		adviceText = "<b>Meta time! " + infoIcon + "</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. Need more time? Then schedule it as a protected time." ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Action time! ' + infoIcon + '</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s). Then enjoy the quick reward 😉 afterwards." ;
+		adviceText = "<b>Action time! " + infoIcon + "</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s). Then enjoy the quick reward 😉 afterwards." ;
 	}
 	document.getElementById('advice').innerHTML = adviceText;
 }
