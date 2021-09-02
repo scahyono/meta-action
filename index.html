@@ -5,7 +5,7 @@ const timelyAdvices={
 	5:'have a clear mind and fit body', 
 	9:'get things done',
 	13:'grow your wealth and freedom',
-	17:'cultivate a loving family',
+	17:'cultivate a house full of love',
 	21:'have a sweet dream'
 };
 function updateAdvice() {
@@ -30,10 +30,10 @@ function updateAdvice() {
 	} else if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
-		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮" ;
+		adviceText = "<b>Meta time!</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. Need more time? Then schedule it as a protected time." ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s)" ;
+		adviceText = "<b>Action time!</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s). Then enjoy the quick reward 😉 afterwards." ;
 	}
 	document.getElementById('advice').innerHTML = adviceText;
 }
