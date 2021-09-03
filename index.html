@@ -31,10 +31,12 @@ function updateAdvice() {
 	} else if (normalizedMinute<20) { 
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
-		adviceText = "<b>Meta time! " + infoIcon + "</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. Need more time? Then schedule it as a protected time." ;
+		adviceText = "<b>Meta time! " + infoIcon + "</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. '
+			+ 'Need more time? Then schedule it as a protected time." ;
 	} else {
 		document.body.style.background = 'SkyBlue';
-		adviceText = "<b>Action time! " + infoIcon + "</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice + " for the next " + timeLeft + "+ minute(s). Then enjoy the quick reward 😉 afterwards." ;
+		adviceText = "<b>Action time! " + infoIcon + "</b><br>Protect your time. Do something great ☑️, such as " + nowAdvice 
+			+ " for the next " + timeLeft + "+ minute(s). Then enjoy a quick reward 😉 afterwards." ;
 	}
 	document.getElementById('advice').innerHTML = adviceText;
 }
