@@ -27,17 +27,23 @@ function updateAdvice() {
 	}
         if (hour>=21 || hour<5) {
 		document.getElementById("breakAnimation").style.display = "none";
+		document.getElementById("actionAnimation").style.display = "block";
+		document.getElementById("sleepAnimation").style.display = "none";
 		document.body.style.background = 'DimGray';
 		timeLeft = 8 - (hour + 3) % 24;
 		adviceText = "<b>Bed time! " + infoIcon + "</b><br>Have a sweet dream 😴 for the next " + timeLeft + " hour(s)" ;
 	} else if (normalizedMinute<20) { 
 		document.getElementById("breakAnimation").style.display = "block";
+		document.getElementById("actionAnimation").style.display = "none";
+		document.getElementById("sleepAnimation").style.display = "none";
 		document.body.style.background = 'MediumSeaGreen';
 		timeLeft = 20-normalizedMinute;
 		adviceText = "<b>Meta time! " + infoIcon + "</b><br>You have <" + timeLeft + " minute(s) for 🏃🏻, 🤲, 📆, 💬, 📚 or 🎮. "
 			+ "Need more time? Then schedule it as a protected time." ;
 	} else {
 		document.getElementById("breakAnimation").style.display = "none";
+		document.getElementById("actionAnimation").style.display = "none";
+		document.getElementById("sleepAnimation").style.display = "block";
 		document.body.style.background = 'SkyBlue';
 		adviceText = "<b>Action time! " + infoIcon + "</b><br>Protect your time. Do something great 🔥, such as " + nowAdvice 
 			+ " for the next " + timeLeft + "+ minute(s). Then enjoy a quick reward 😉 afterwards." ;
@@ -56,6 +62,8 @@ setInterval(updateAdvice, 3000);
 </head>
 <body>
 <iframe id="breakAnimation" class="float-left" src="https://giphy.com/embed/RicRd3dDNQJM3fmkzt" width="80" height="80" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe id="actionAnimation" class="float-left" src="https://giphy.com/embed/mCsVKJJ2U2gJd8qM8Y" width="60" height="80" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe id="sleepAnimation" class="float-left" src="https://giphy.com/embed/Q2i2JJBiW2GpW" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <div id="advice">
 	Hello world
 </div>
